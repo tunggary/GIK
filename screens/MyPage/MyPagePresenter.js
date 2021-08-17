@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-export default function Mypage() {
+export default () => {
   return (
     <View>
-      <Text>Mypage</Text>
+      <Text>MyPage</Text>
     </View>
   );
-}
+};
