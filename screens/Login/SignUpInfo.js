@@ -35,7 +35,7 @@ export default () => {
   return (
     <ScrollContainer>
       <NavigationBtn goto={"SignUp"} />
-      <Logo source={require("../../img/main_page_logo.png")} />
+      <Logo source={require("../../img/logo.png")} />
       <InputContainer>
         <Label>이름</Label>
         <TextInputCom

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Main from "../screens/Main";
-import Bookmark from "../screens/Bookmark";
 import Shopping from "../screens/Shopping";
 import Search from "../screens/Search";
 import MyPage from "../screens/MyPage";
@@ -18,17 +17,21 @@ export default () => {
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused }) => {
           if (route.name == "Main") {
-            return (
-              <Image source={require("../img/home_button.png")} style={{ tintColor: "#171d52" }} />
+            return focused ? (
+              <Image source={require("../img/home_button_clicked.png")} />
+            ) : (
+              <Image source={require("../img/home_button.png")} />
             );
-          } else if (route.name == "Bookmark") {
-            return <Image source={require("../img/bookmark_button.png")} />;
           } else if (route.name == "Search") {
             return <Image source={require("../img/search_button.png")} />;
           } else if (route.name == "Shopping") {
-            return <Image source={require("../img/shopping_list_button.png")} />;
+            return <Image source={require("../img/shopping_button.png")} />;
           } else {
-            return <Image source={require("../img/private_page_button.png")} />;
+            return focused ? (
+              <Image source={require("../img/private_button_clicked.png")} />
+            ) : (
+              <Image source={require("../img/private_button.png")} />
+            );
           }
         },
       })}
@@ -48,7 +51,7 @@ export default () => {
         showLabel: false,
       }}
     >
-      <Tab.Screen name="Bookmark" component={Bookmark} />
+      <Tab.Screen name="Main" component={Main} />
       <Tab.Screen
         name="Search"
         component={Search}
@@ -59,7 +62,6 @@ export default () => {
           },
         }}
       />
-      <Tab.Screen name="Main" component={Main} />
       <Tab.Screen
         name="Shopping"
         component={Shopping}

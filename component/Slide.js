@@ -1,10 +1,12 @@
 import React from "react";
-import { View, Image } from "react-native";
+import { Dimensions, View } from "react-native";
 import styled from "styled-components/native";
 import Swiper from "react-native-swiper";
 
+const { height } = Dimensions.get("window");
+
 const Wrapper = styled.View`
-  height: 50%;
+  height: ${height * 0.53}px;
   width: 88%;
   margin-bottom: 5%;
 `;
@@ -73,11 +75,12 @@ export default function Slide() {
         dot={
           <View
             style={{
+              bottom: -70,
               backgroundColor: "white",
               width: 10,
               height: 10,
               borderWidth: 1,
-              borderColor: "#171d52",
+              borderColor: "black",
               borderRadius: 5,
               margin: 15,
             }}
@@ -86,7 +89,8 @@ export default function Slide() {
         activeDot={
           <View
             style={{
-              backgroundColor: "#171d52",
+              bottom: -70,
+              backgroundColor: "black",
               width: 10,
               height: 10,
               borderRadius: 5,

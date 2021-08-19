@@ -12,40 +12,38 @@ const Container = styled.View`
   align-items: center;
 `;
 
-const Logo = styled.Image`
-  width: 151px;
-  height: 68px;
-`;
+const Logo = styled.Image``;
 
 const LogoContainer = styled.View`
   position: absolute;
-  top: 89px;
-  left: 223px;
+  top: ${height * 0.09}px;
+  left: ${width * 0.55}px;
 `;
 
 const CircleTop = styled.Image`
-  width: 180px;
-  height: 179px;
+  width: 259px;
+  height: 259px;
+
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -${259 - height * 0.19}px;
+  left: -${259 - width * 0.44}px;
 `;
 
 const CircleBottom = styled.Image`
-  width: 192px;
-  height: 206px;
+  width: 259px;
+  height: 259px;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -${259 - height * 0.21}px;
+  right: -${259 - width * 0.44}px;
 `;
 
 export default () => {
   return (
     <Container>
-      <CircleTop source={require("../../img/BackgroundCircleTop.png")} />
-      <CircleBottom source={require("../../img/BackgroundCircleBottom.png")} />
+      <CircleTop source={require("../../img/main_circle.png")} />
+      <CircleBottom source={require("../../img/main_circle.png")} />
       <LogoContainer>
-        <Logo source={require("../../img/main_page_logo.png")} />
+        <Logo source={require("../../img/logo.png")} />
       </LogoContainer>
       <Slide />
     </Container>

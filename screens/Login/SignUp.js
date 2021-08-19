@@ -20,7 +20,7 @@ export default () => {
   return (
     <ScrollContainer>
       <NavigationBtn goto={"Login"} />
-      <Logo source={require("../../img/main_page_logo.png")} />
+      <Logo source={require("../../img/logo.png")} />
       <View
         style={{
           width: "80%",
