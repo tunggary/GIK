@@ -69,7 +69,7 @@ export default function Slide() {
   return (
     <Wrapper>
       <Swiper
-        autoplay={true}
+        autoplay={false}
         showsButtons={true}
         style={{ borderRadius: 40 }}
         dot={
