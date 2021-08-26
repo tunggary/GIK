@@ -8,6 +8,8 @@ import SignUpInfo from "../screens/Login/SignUpInfo";
 import Shopping from "../screens/Shopping";
 import Clothes from "../screens/Shopping/ClothesContainer";
 import ClothesDetail from "../screens/Shopping/DetailContainer";
+import Question from "../screens/MyPage/QuestionContainer";
+import Bookmark from "../screens/MyPage/Bookmark";
 
 const Stack = createStackNavigator();
 export default () => {
@@ -25,6 +27,8 @@ export default () => {
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="SignUp" component={SignUp} />
       <Stack.Screen name="SignUpInfo" component={SignUpInfo} />
+      <Stack.Screen name="Question" component={Question} />
+      <Stack.Screen name="Bookmark" component={Bookmark} />
     </Stack.Navigator>
   );
 };

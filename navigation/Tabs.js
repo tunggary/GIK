@@ -8,8 +8,9 @@ import { Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const Tab = createBottomTabNavigator();
+
 export default () => {
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
   const navigation = useNavigation();
   return (
     <Tab.Navigator
@@ -38,7 +39,6 @@ export default () => {
       tabBarOptions={{
         style: {
           position: "absolute",
-          backgroundColor: "rgba(238,238,238,0.7)",
           borderTopColor: "white",
           paddingBottom: 0,
           paddingLeft: 5,
@@ -46,7 +46,13 @@ export default () => {
           marginBottom: 30,
           borderRadius: 40,
           height: 50,
-          elevation: 0,
+          elevation: 3,
+          shadowColor: "#000",
+          shadowOffset: {
+            height: 0,
+          },
+          shadowOpacity: 0.2,
+          backgroundColor: "white",
         },
         showLabel: false,
       }}

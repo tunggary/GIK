@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Dimensions, TouchableOpacity, View, Text, Animated, ScrollView } from "react-native";
+import { Dimensions, TouchableOpacity, Animated, ScrollView } from "react-native";
 import NavigationBtn from "../../component/NavigationBtn";
 import styled from "styled-components/native";
 import Purchase from "../../component/Purchase";
@@ -7,8 +7,9 @@ import Reviews from "../../component/Reviews";
 import Qna from "../../component/Qna";
 import { getStatusBarHeight } from "react-native-status-bar-height";
 import BottomBar from "../../component/BottomBar";
+import ProducerProfile from "../../component/ProducerProfile";
 
-const { width, height } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 
 const Container = styled.View`
   flex: 1;
@@ -16,44 +17,9 @@ const Container = styled.View`
 `;
 
 const ProducerContainer = styled.View`
-  margin-top: 30px;
   margin-right: 50px;
-  flex-direction: row;
-  overflow: visible;
+  margin-top: 30px;
 `;
-
-const ProducerImage = styled.View`
-  width: 60px;
-  height: 60px;
-  align-items: center;
-  justify-content: center;
-  border-width: 2px;
-  border-color: #171d52;
-  border-radius: 30px;
-`;
-
-const ProducerImageDetail = styled.Image`
-  width: 42px;
-  height: 42px;
-  border-radius: 21px;
-`;
-
-const ProducerName = styled.View`
-  position: relative;
-  height: 35px;
-  top: 10px;
-  left: -5px;
-  max-width: ${width / 1.7}px;
-  border-bottom-width: 2px;
-  border-color: #171d52;
-  padding: 0 20px;
-`;
-
-const ProducerNameDetail = styled.Text`
-  font-size: 24px;
-  font-weight: 300;
-`;
-
 const ImageContainer = styled.View`
   width: ${width / 1.3}px;
   height: ${width / 1.2}px;
@@ -204,12 +170,10 @@ export default ({ data: { id, name, price } }) => {
         >
           <NavigationBtn goto={"Clothes"} />
           <ProducerContainer>
-            <ProducerImage>
-              <ProducerImageDetail source={require("../../img/clothes1.jpeg")} />
-            </ProducerImage>
-            <ProducerName>
-              <ProducerNameDetail>Studio Yoon</ProducerNameDetail>
-            </ProducerName>
+            <ProducerProfile
+              profileImage={require("../../img/clothes2.jpeg")}
+              profileName="Studio Yoon"
+            />
           </ProducerContainer>
           <ImageContainer>
             <ImageDetail source={require("../../img/clothes1.jpeg")} />

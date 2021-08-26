@@ -14,6 +14,7 @@ const Container = styled.View`
 
 const Circle = styled.Image`
   position: absolute;
+  border-radius: ${width / 1.7}px;
 `;
 
 const CircleText = styled.Text`
@@ -24,7 +25,7 @@ const CircleText = styled.Text`
 const ListLeft = styled.View`
   position: absolute;
   z-index: 50;
-  top: ${height / 2 - width / 6.8}px;
+  top: ${height / 2 - width / 8}px;
   left: ${width / 2}px;
 `;
 const ListRight = styled.View`
@@ -63,15 +64,14 @@ const styles = StyleSheet.create({
   },
   circleTopBig: {
     position: "absolute",
-    zIndex: 100,
     backgroundColor: "white",
-    borderRadius: width / 2.6,
     top: height / 2 - width / 1.3 - 25,
     right: width / 2 - width / 8,
     width: width / 1.3,
     height: width / 1.3,
     alignItems: "center",
     justifyContent: "center",
+    zIndex: 1,
   },
   circleBottom: {
     position: "absolute",
@@ -85,7 +85,6 @@ const styles = StyleSheet.create({
   },
   circleBottomBig: {
     position: "absolute",
-    zIndex: 100,
     backgroundColor: "white",
     top: height / 2 + 25,
     left: width / 2 - width / 8,
@@ -94,6 +93,7 @@ const styles = StyleSheet.create({
     height: width / 1.3,
     alignItems: "center",
     justifyContent: "center",
+    zIndex: 1,
   },
   back: {
     top: 0,
