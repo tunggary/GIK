@@ -10,6 +10,8 @@ import Clothes from "../screens/Shopping/ClothesContainer";
 import ClothesDetail from "../screens/Shopping/DetailContainer";
 import Question from "../screens/MyPage/QuestionContainer";
 import Bookmark from "../screens/MyPage/Bookmark";
+import ShoppingList from "../screens/MyPage/ShoppingList";
+import Purchase from "../screens/MyPage/Purchase";
 
 const Stack = createStackNavigator();
 export default () => {
@@ -29,6 +31,8 @@ export default () => {
       <Stack.Screen name="SignUpInfo" component={SignUpInfo} />
       <Stack.Screen name="Question" component={Question} />
       <Stack.Screen name="Bookmark" component={Bookmark} />
+      <Stack.Screen name="ShoppingList" component={ShoppingList} />
+      <Stack.Screen name="Purchase" component={Purchase} />
     </Stack.Navigator>
   );
 };

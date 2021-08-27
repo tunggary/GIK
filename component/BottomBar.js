@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
-import { FontAwesome } from "@expo/vector-icons";
+import { AntDesign, FontAwesome } from "@expo/vector-icons";
 import { Dimensions, TouchableOpacity } from "react-native";
 const { width } = Dimensions.get("window");
 
@@ -10,7 +10,7 @@ const BottomBar = styled.View`
   right: 0;
   bottom: 0;
   height: 80px;
-  background-color: #dbdbdb;
+  background-color: white;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -23,27 +23,44 @@ const BottomBarContainer = styled.View`
 `;
 
 const BottomBarText = styled.Text`
-  font-size: 24px;
-  font-weight: 300;
-  color: #171d52;
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
 `;
+
+const componentStyle = {
+  elevation: 3,
+  shadowColor: "black",
+  shadowOpacity: 0.2,
+  shadowOffset: {
+    height: 0,
+  },
+  backgroundColor: "white",
+  padding: 10,
+  paddingTop: 15,
+  paddingBottom: 15,
+  borderRadius: 50,
+  flexDirection: "row",
+  justifyContent: "center",
+};
 
 export default () => {
   return (
     <BottomBar>
       <BottomBarContainer>
-        <TouchableOpacity>
-          <FontAwesome name="heart-o" size={28} style={{ color: "#171d52" }} />
+        <TouchableOpacity style={{ ...componentStyle, width: 52 }}>
+          <FontAwesome name="heart-o" size={22} color={"black"} />
         </TouchableOpacity>
       </BottomBarContainer>
       <BottomBarContainer>
-        <TouchableOpacity>
+        <TouchableOpacity style={componentStyle}>
           <BottomBarText>OPTIONS</BottomBarText>
         </TouchableOpacity>
       </BottomBarContainer>
       <BottomBarContainer>
-        <TouchableOpacity>
+        <TouchableOpacity style={componentStyle}>
           <BottomBarText>BUY</BottomBarText>
+          <AntDesign name="arrowright" size={20} />
         </TouchableOpacity>
       </BottomBarContainer>
     </BottomBar>

@@ -1,11 +1,10 @@
 import React from "react";
-import { View, Text, Dimensions, TouchableOpacity } from "react-native";
+import { Dimensions, TouchableOpacity } from "react-native";
 import NavigationBtn from "../../../component/NavigationBtn";
 import ScrollContainer from "../../../component/ScrollContainer";
 import styled from "styled-components/native";
-import ProducerProfile from "../../../component/ProducerProfile";
 
-const { width, height } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 
 const Header = styled.View`
   flex-direction: row;
@@ -26,62 +25,56 @@ const HeaderTitle = styled.Text`
   margin-bottom: 2px;
 `;
 
-const MainContainer = styled.View``;
-
-const ProducerContainer = styled.View`
-  width: 90%;
-  margin-top: 12px;
+const MainContainer = styled.View`
+  width: ${width * 0.8}px;
+  padding: 20px;
+  border-radius: 20px;
 `;
 
-const MessageContainer = styled.View`
-  width: ${width * 0.8}px;
-  height: 140px;
-  border-radius: 20px;
+const Content = styled.View`
+  height: 100px;
+  border-bottom-width: 1px;
+  border-color: #828282;
+  padding-left: 10px;
+  padding-right: 10px;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
 `;
 
 const boxShadow = {
   elevation: 3,
-  shadowColor: "#E5E5E5",
-  shadowOpacity: 1,
+  shadowColor: "black",
+  shadowOpacity: 0.2,
   shadowOffset: {
     height: 2,
   },
   backgroundColor: "white",
 };
 
-const MessageBox = styled.View`
-  width: 90%;
-  height: 37px;
-  background-color: #f2f2f2;
-  justify-content: center;
-  padding: 0 10px;
-  border-radius: 7px;
-  margin-top: 15px;
+const ContentImageBox = styled.View`
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
 `;
 
-const Message = styled.Text`
+const ContentImage = styled.Image`
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+`;
+
+const ContentTitle = styled.Text`
+  width: ${width * 0.8 - 162}px;
+  height: 70px;
   font-size: 14px;
   font-weight: 300;
+  padding-left: 10px;
 `;
 
-const Alert = styled.View`
-  position: absolute;
-  right: -10px;
-  top: -10px;
-  width: 30px;
-  height: 30px;
-  background-color: #ff5b5b;
-  border-radius: 15px;
-  align-items: center;
-  justify-content: center;
-`;
+const ContentWishBox = styled.View``;
 
-const AlertText = styled.Text`
-  font-size: 16px;
-  color: white;
-`;
+const ContentWish = styled.Image``;
 
 export default () => {
   return (
@@ -91,41 +84,46 @@ export default () => {
         <HeaderLogo source={require("../../../img/myPage/bookmark.png")} />
         <HeaderTitle>찜목록</HeaderTitle>
       </Header>
-      <MainContainer>
-        <TouchableOpacity>
-          <MessageContainer style={boxShadow}>
-            <ProducerContainer>
-              <ProducerProfile
-                profileImage={require("../../../img/clothes3.jpeg")}
-                profileName="Studio Yoon"
-                smallsize={true}
-              />
-            </ProducerContainer>
-            <MessageBox>
-              <Message>안녕하세요 지난번에 문의드렸던</Message>
-            </MessageBox>
-            <Alert>
-              <AlertText>2</AlertText>
-            </Alert>
-          </MessageContainer>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <MessageContainer style={boxShadow}>
-            <ProducerContainer>
-              <ProducerProfile
-                profileImage={require("../../../img/clothes2.jpeg")}
-                profileName="Jeong"
-                smallsize={true}
-              />
-            </ProducerContainer>
-            <MessageBox>
-              <Message>안녕하세요 지난번에 문의드렸던</Message>
-            </MessageBox>
-            <Alert>
-              <AlertText>2</AlertText>
-            </Alert>
-          </MessageContainer>
-        </TouchableOpacity>
+      <MainContainer style={boxShadow}>
+        <Content>
+          <TouchableOpacity>
+            <ContentImageBox style={boxShadow}>
+              <ContentImage source={require("../../../img/clothes3.jpeg")} />
+            </ContentImageBox>
+          </TouchableOpacity>
+          <ContentTitle>여름 셔츠</ContentTitle>
+          <ContentWishBox>
+            <TouchableOpacity>
+              <ContentWish source={require("../../../img/myPage/Wish.png")} />
+            </TouchableOpacity>
+          </ContentWishBox>
+        </Content>
+        <Content>
+          <TouchableOpacity>
+            <ContentImageBox style={boxShadow}>
+              <ContentImage source={require("../../../img/clothes3.jpeg")} />
+            </ContentImageBox>
+          </TouchableOpacity>
+          <ContentTitle>여름 셔츠</ContentTitle>
+          <ContentWishBox>
+            <TouchableOpacity>
+              <ContentWish source={require("../../../img/myPage/Wish_no.png")} />
+            </TouchableOpacity>
+          </ContentWishBox>
+        </Content>
+        <Content>
+          <TouchableOpacity>
+            <ContentImageBox style={boxShadow}>
+              <ContentImage source={require("../../../img/clothes3.jpeg")} />
+            </ContentImageBox>
+          </TouchableOpacity>
+          <ContentTitle>여름 셔츠</ContentTitle>
+          <ContentWishBox>
+            <TouchableOpacity>
+              <ContentWish source={require("../../../img/myPage/Wish.png")} />
+            </TouchableOpacity>
+          </ContentWishBox>
+        </Content>
       </MainContainer>
     </ScrollContainer>
   );

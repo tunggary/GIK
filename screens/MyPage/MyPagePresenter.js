@@ -97,13 +97,13 @@ export default () => {
               <ComponentTitle>찜목록</ComponentTitle>
             </Component>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("ShoppingList")}>
             <Component>
               <ComponentIcon source={require("../../img/myPage/shopping_list.png")} />
               <ComponentTitle>쇼핑 카트</ComponentTitle>
             </Component>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("Purchase")}>
             <Component>
               <ComponentIcon source={require("../../img/myPage/receipt.png")} />
               <ComponentTitle>구매 내역</ComponentTitle>
