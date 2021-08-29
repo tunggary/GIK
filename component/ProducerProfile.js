@@ -15,6 +15,7 @@ const ProducerImage = styled.View`
   justify-content: center;
   border-width: 2px;
   border-radius: 30px;
+  background-color: white;
 `;
 
 const ProducerImageSmall = styled.View`
@@ -24,6 +25,7 @@ const ProducerImageSmall = styled.View`
   justify-content: center;
   border-width: 2px;
   border-radius: 23px;
+  background-color: white;
 `;
 
 const ProducerImageDetail = styled.Image`
@@ -68,23 +70,27 @@ const ProducerNameDetailSmall = styled.Text`
   font-weight: 300;
 `;
 
-export default ({ profileImage, profileName, smallsize }) => {
+export default ({ profileImage, profileName, smallsize, light, style }) => {
   return smallsize ? (
-    <ProducerContainer>
+    <ProducerContainer style={{ ...style }}>
       <ProducerImageSmall>
         <ProducerImageDetailSmall source={profileImage} />
       </ProducerImageSmall>
       <ProducerNameSmall>
-        <ProducerNameDetailSmall>{profileName}</ProducerNameDetailSmall>
+        <ProducerNameDetailSmall style={{ color: light ? "white" : "black" }}>
+          {profileName}
+        </ProducerNameDetailSmall>
       </ProducerNameSmall>
     </ProducerContainer>
   ) : (
-    <ProducerContainer>
+    <ProducerContainer style={{ ...style }}>
       <ProducerImage>
         <ProducerImageDetail source={profileImage} />
       </ProducerImage>
       <ProducerName>
-        <ProducerNameDetail>{profileName}</ProducerNameDetail>
+        <ProducerNameDetail style={{ color: light ? "white" : "black" }}>
+          {profileName}
+        </ProducerNameDetail>
       </ProducerName>
     </ProducerContainer>
   );

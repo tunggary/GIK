@@ -111,7 +111,7 @@ export default () => {
           </TouchableOpacity>
         </Box>
         <Box style={boxShadow}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
             <Component>
               <ComponentIcon source={require("../../img/myPage/sale_list.png")} />
               <ComponentTitle>판매 프로필</ComponentTitle>
@@ -123,7 +123,7 @@ export default () => {
               <ComponentTitle>수익 정산</ComponentTitle>
             </Component>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("Selling")}>
             <Component>
               <ComponentIcon source={require("../../img/myPage/receipt.png")} />
               <ComponentTitle>판매 내역</ComponentTitle>

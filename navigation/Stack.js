@@ -12,6 +12,8 @@ import Question from "../screens/MyPage/QuestionContainer";
 import Bookmark from "../screens/MyPage/Bookmark";
 import ShoppingList from "../screens/MyPage/ShoppingList";
 import Purchase from "../screens/MyPage/Purchase";
+import Selling from "../screens/MyPage/Selling";
+import Profile from "../screens/MyPage/Profile";
 
 const Stack = createStackNavigator();
 export default () => {
@@ -33,6 +35,8 @@ export default () => {
       <Stack.Screen name="Bookmark" component={Bookmark} />
       <Stack.Screen name="ShoppingList" component={ShoppingList} />
       <Stack.Screen name="Purchase" component={Purchase} />
+      <Stack.Screen name="Selling" component={Selling} />
+      <Stack.Screen name="Profile" component={Profile} />
     </Stack.Navigator>
   );
 };
