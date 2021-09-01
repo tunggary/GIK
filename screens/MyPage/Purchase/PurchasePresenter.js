@@ -172,7 +172,13 @@ const QuestionText = styled.Text`
 const QuestionPostion = {
   position: "absolute",
   bottom: 40,
-  left: 40,
+  left: 25,
+};
+
+const ReviewPostion = {
+  position: "absolute",
+  bottom: 40,
+  left: 90,
 };
 export default () => {
   return (
@@ -236,59 +242,9 @@ export default () => {
             <QuestionText>문의</QuestionText>
           </QuestionContaier>
         </TouchableOpacity>
-      </MainContainer>
-      <MainContainer style={boxShadow}>
-        <ProducerContainer>
-          <ProducerProfile
-            profileImage={require("../../../img/clothes2.jpeg")}
-            profileName="Studio Yoon"
-            smallsize={true}
-          />
-        </ProducerContainer>
-        <Content>
-          <TouchableOpacity>
-            <ContentImageBox style={boxShadow}>
-              <ContentImage source={require("../../../img/clothes3.jpeg")} />
-            </ContentImageBox>
-          </TouchableOpacity>
-          <ContentTitle>여름 셔츠 한정판 특가</ContentTitle>
-          <ContentPriceBox>
-            <ContentPrice>1,000,000 원</ContentPrice>
-          </ContentPriceBox>
-        </Content>
-        <Content>
-          <TouchableOpacity>
-            <ContentImageBox style={boxShadow}>
-              <ContentImage source={require("../../../img/clothes3.jpeg")} />
-            </ContentImageBox>
-          </TouchableOpacity>
-          <ContentTitle>여름 셔츠 한정판 특가</ContentTitle>
-          <ContentPriceBox>
-            <ContentPrice>1,000,000 원</ContentPrice>
-          </ContentPriceBox>
-        </Content>
-        <PriceContainer>
-          <TotalContainer>
-            <TotalPriceText>합계:</TotalPriceText>
-            <TotalPrice>4,000,000 원</TotalPrice>
-          </TotalContainer>
-          <ProcessContainer>
-            <ProcessIcon>
-              <ProcessBar />
-              <View style={{ ...IconStyle, left: 0 }} />
-              <View style={{ ...IconStyle, left: 55, backgroundColor: "#171d52" }} />
-              <View style={{ ...IconStyle, left: 110 }} />
-            </ProcessIcon>
-            <ProcessText>
-              <Text style={{ ...TextStyle }}>주문확인</Text>
-              <Text style={{ ...TextStyle, color: "black" }}>배송중</Text>
-              <Text style={{ ...TextStyle }}>배송완료</Text>
-            </ProcessText>
-          </ProcessContainer>
-        </PriceContainer>
-        <TouchableOpacity style={QuestionPostion}>
+        <TouchableOpacity style={ReviewPostion}>
           <QuestionContaier>
-            <QuestionText>문의</QuestionText>
+            <QuestionText>후기</QuestionText>
           </QuestionContaier>
         </TouchableOpacity>
       </MainContainer>

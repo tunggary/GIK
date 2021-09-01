@@ -120,10 +120,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   ButtonDescription: {
-    width: width * 0.3,
+    width: width * 0.23,
     fontSize: 12,
+    textAlign: "center",
   },
-  ButtonConfirm: {
+  Button: {
     width: 64,
     height: 34,
     borderColor: "#979797",
@@ -172,8 +173,13 @@ export default ({ NickName, Product, Address }) => {
         <Text style={styles.AddressText}>{Address}</Text>
       </View>
       <View style={styles.ButtonContainer}>
-        <Text style={styles.ButtonDescription}>입금확인 후 배송을 보내셨다면 클릭해주세요!</Text>
-        <TouchableOpacity style={styles.ButtonConfirm}>
+        <Text style={styles.ButtonDescription}>
+          입금확인 후 배송을 보내셨다면 클릭! {"\n"}배송이 도착되었단 메세지확인시 클릭
+        </Text>
+        <TouchableOpacity style={styles.Button}>
+          <Text>배송시작</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.Button}>
           <Text>배송완료</Text>
         </TouchableOpacity>
       </View>
