@@ -71,7 +71,7 @@ const Alert = styled.View`
   top: -10px;
   width: 30px;
   height: 30px;
-  background-color: #ff5b5b;
+  background-color: #F28729;
   border-radius: 15px;
   align-items: center;
   justify-content: center;

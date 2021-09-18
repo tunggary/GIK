@@ -38,6 +38,16 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     marginRight: 5,
   },
+  ButtonDown:{
+    position: "absolute",
+    top: -37,
+    right: 0
+  },
+  ButtonUp:{
+    position: "absolute",
+    top: -3,
+    right: -6
+  },
   ImageContainer: {
     flexDirection: "row",
     paddingBottom: 10,
@@ -149,7 +159,7 @@ export default ({ NickName, Product, Address }) => {
         <Text>님</Text>
       </View>
       <TouchableOpacity style={styles.ButtonToggle} onPress={toggle}>
-        <Text>접기</Text>
+        <Image source={require("../img/myPage/button_up.png")} style={styles.ButtonUp}/>
       </TouchableOpacity>
       {Product.map((each, index) => (
         <View key={index} style={styles.ProductContainer}>
@@ -185,13 +195,15 @@ export default ({ NickName, Product, Address }) => {
       </View>
     </View>
   ) : (
-    <TouchableOpacity onPress={toggle} activeOpacity={0.8}>
       <View style={[styles.Container, styles.boxShadow]}>
         <View style={styles.IDContainer}>
           <Text>ID:</Text>
           <Text style={styles.IDText}>{NickName}</Text>
           <Text>님</Text>
         </View>
+        <TouchableOpacity onPress={toggle} activeOpacity={0.8}>
+          <Image source={require("../img/myPage/button_down.png")} style={styles.ButtonDown}/>
+        </TouchableOpacity>
         <View style={styles.ImageContainer}>
           {Product.map((each, index) =>
             index > minNumber - 1 ? null : (
@@ -206,6 +218,5 @@ export default ({ NickName, Product, Address }) => {
           <Text style={styles.AddressText}>{Address}</Text>
         </View>
       </View>
-    </TouchableOpacity>
   );
 };

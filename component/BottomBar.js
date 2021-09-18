@@ -49,7 +49,7 @@ export default () => {
     <BottomBar>
       <BottomBarContainer>
         <TouchableOpacity style={{ ...componentStyle, width: 52 }}>
-          <FontAwesome name="heart-o" size={22} color={"black"} />
+          <FontAwesome name="heart-o" size={22} color={"#E17979"} />
         </TouchableOpacity>
       </BottomBarContainer>
       <BottomBarContainer>

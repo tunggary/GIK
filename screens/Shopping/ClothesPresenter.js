@@ -46,6 +46,17 @@ const ImageCom = styled.Image`
   border-radius: 25px;
   margin-top: 20px;
 `;
+
+const boxShadow = {
+  elevation: 3,
+  shadowColor: "black",
+  shadowOpacity: 0.4,
+  shadowOffset: {
+    height: 0,
+  },
+  backgroundColor: "#f4f4f4"
+};
+
 export default () => {
   const navigation = useNavigation();
   const gotoDetail = () =>
@@ -55,7 +66,7 @@ export default () => {
       <TitleContainer>
         <Title>Clothes</Title>
       </TitleContainer>
-      <MainContainer>
+      <MainContainer style={boxShadow}>
         <LeftColumn>
           <TouchableOpacity onPress={gotoDetail}>
             <ImageCom source={require("../../img/clothes1.jpeg")} />
